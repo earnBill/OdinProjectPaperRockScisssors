@@ -6,6 +6,9 @@ const enemyImage = document.querySelector('.enemyScreen .screen img');
 const playerScore = document.querySelector('.playerScore');
 const enemyScore = document.querySelector('.enemyScore');
 const playerImage = document.querySelector('.playerScreen .screen img');
+const logs = document.querySelector('.logs');
+const playBtns = document.querySelector('.playBtns');
+const playAgain = document.querySelector('.playAgain');
 
 //global array with values
 let choice = ["paper", "rock", "scissors"];
@@ -16,12 +19,17 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+
+function showAlert(text) {
+    alert(text);
+}
+
 //play a round
 function playRound(playerSelection, computerSelection) {
     if
     (playerSelection == "paper" && computerSelection == "rock" ||
      playerSelection =="rock" && computerSelection == "scissors" ||
-     playerSelection == "scissord" && computerSelection == "paper") {
+     playerSelection == "scissors" && computerSelection == "paper") {
         return "player"
      }
      else
@@ -30,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
 
 //clear document
 function clear() {
-    container.innerHTML = "";
+    logs.textContent = "";
     computer = 0;
     player = 0;
 }
@@ -41,9 +49,17 @@ let computer = 0;
 let alertP = false;
 let alertC = false;
 
-let container = document.querySelector('.container');
+playAgain.addEventListener('click', () => {
+    playAgain.style.display = 'none';
+    playBtns.style.display = 'block';
+    enemyImage.src = '';
+    playerImage.src = '';
+    playerScore.textContent = 0;
+    enemyScore.textContent = 0;
+    logs.textContent = '';
+} )
 
-document.querySelectorAll('button').forEach(button => {
+document.querySelectorAll('.btns').forEach(button => {
     button.onclick = () => {
         let playerChoice = button.dataset.attr;
         let computerChoice = getComputerChoice();
@@ -75,7 +91,7 @@ document.querySelectorAll('button').forEach(button => {
             clear();
 
         if (playerChoice == computerChoice) {
-            container.innerHTML += 'Repeat round! <br>'
+            logs.innerHTML += 'Repeat round! <br>'
             return
         }
         
@@ -84,38 +100,45 @@ document.querySelectorAll('button').forEach(button => {
         if (result == 'player') {
             player++;
             playerScore.textContent = player;
-            container.innerHTML += `Player wins! ${playerChoice} beats ${computerChoice} <br>`;
-            container.innerHTML += `player : ${player} computer : ${computer} <br>`;
+            // logs.innerHTML += `Player wins! ${playerChoice} beats ${computerChoice} <br>`;
+            // logs.innerHTML += `player : ${player} computer : ${computer} <br>`;
             console.log(`player : ${player} computer : ${computer}`)
             
         }
         else {
             computer++;
             enemyScore.textContent = computer;
-            container.innerHTML += `You Lose! ${computerChoice} beats ${playerChoice} <br>`;
-            container.innerHTML += `player : ${player} computer : ${computer} <br>`;
+            // logs.innerHTML += `You Lose! ${computerChoice} beats ${playerChoice} <br>`;
+            // logs.innerHTML += `player : ${player} computer : ${computer} <br>`;
             console.log(`player : ${player} computer : ${computer}`)
             
         }
 
         if (player == 5  ) {
-            container.innerHTML += `You win with score: ${player} : ${computer} <br>`;
-            container.innerHTML += 'Game Over';
+            // logs.innerHTML += `You win with score: ${player} : ${computer} <br>`;
+            // logs.innerHTML += 'Game Over';
 
-            header.innerHTML = `You win with score: ${player} : ${computer}`
-            container.append(header);
+            header.textContent = `You win with score: ${player} : ${computer}`
+            logs.append(header);
             
             console.log(`You win with score: ${player} : ${computer}`);
+            playBtns.style.display = 'none';
+            player = 0;
+            computer = 0;
+            playAgain.style.display = 'block';
             
         }
 
         else if (computer == 5 ) {
-            container.innerHTML += `You lose with score: ${player} : ${computer} <br>`;
-            container.innerHTML += "Game over!!!!";
+            // logs.innerHTML += `You lose with score: ${player} : ${computer} <br>`;
+            // logs.innerHTML += "Game over!!!!";
             
             header.innerHTML = `You lose with score: ${player} : ${computer}`
-            container.append(header);
-            
+            logs.append(header);
+            playBtns.style.display = 'none';
+            player = 0;
+            computer = 0;
+            playAgain.style.display = 'block';
         }
 
     }

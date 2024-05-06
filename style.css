@@ -1,6 +1,21 @@
+.mainContainer {
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.logs {
+    margin: auto;
+    width: 50%;
+    margin-top: 30px;
+}
 
 .Screen {
     min-height: 100px;
+    display: flex;
+    flex-direction: column;
 }
 
 .mainContainer {
@@ -32,3 +47,12 @@ img {
     width: 200px;
     margin-bottom:  5px;
 }
+
+.playAgain {
+    margin: auto;
+    padding: 20px;
+    font-size: 20px;
+}
+
+
+
