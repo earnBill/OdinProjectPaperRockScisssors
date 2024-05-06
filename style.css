@@ -1,0 +1,34 @@
+
+.Screen {
+    min-height: 100px;
+}
+
+.mainContainer {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+h2 {
+    text-align: center;
+}
+
+.playerScreen .screen {
+    display: flex;
+    
+}
+
+.enemyScreen .screen {
+    display: flex;
+    
+}
+
+.eleCont {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+img {
+    min-height: 200px;
+    width: 200px;
+    margin-bottom:  5px;
+}

@@ -1,5 +1,11 @@
+
 //after all content loads then run the code
 document.addEventListener('DOMContentLoaded', ()=> {
+
+const enemyImage = document.querySelector('.enemyScreen .screen img');
+const playerScore = document.querySelector('.playerScore');
+const enemyScore = document.querySelector('.enemyScore');
+const playerImage = document.querySelector('.playerScreen .screen img');
 
 //global array with values
 let choice = ["paper", "rock", "scissors"];
@@ -10,7 +16,7 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-//playround
+//play a round
 function playRound(playerSelection, computerSelection) {
     if
     (playerSelection == "paper" && computerSelection == "rock" ||
@@ -43,6 +49,25 @@ document.querySelectorAll('button').forEach(button => {
         let computerChoice = getComputerChoice();
         let header = document.createElement('h2');
 
+        if (playerChoice === 'paper') {
+            playerImage.src = 'images/paperPlayer.jpg';
+        }
+        else if(playerChoice === 'rock') {
+            playerImage.src = 'images/rockPlayer.jpg';
+        }
+        else if (playerChoice === 'scissors') {
+            playerImage.src = 'images/scissorsPlayer.jpg'
+        }
+
+        if (computerChoice === 'paper') {
+            enemyImage.src = 'images/paperEnemy.jpg';
+        }
+        else if (computerChoice === 'rock') {
+            enemyImage.src = 'images/rockEnemy.jpg';
+        }
+        else if (computerChoice === 'scissors') {
+            enemyImage.src = 'images/scissorsEnemy.jpg'
+        }
         console.log(computerChoice);
         console.log(playerChoice);
 
@@ -58,6 +83,7 @@ document.querySelectorAll('button').forEach(button => {
 
         if (result == 'player') {
             player++;
+            playerScore.textContent = player;
             container.innerHTML += `Player wins! ${playerChoice} beats ${computerChoice} <br>`;
             container.innerHTML += `player : ${player} computer : ${computer} <br>`;
             console.log(`player : ${player} computer : ${computer}`)
@@ -65,6 +91,7 @@ document.querySelectorAll('button').forEach(button => {
         }
         else {
             computer++;
+            enemyScore.textContent = computer;
             container.innerHTML += `You Lose! ${computerChoice} beats ${playerChoice} <br>`;
             container.innerHTML += `player : ${player} computer : ${computer} <br>`;
             console.log(`player : ${player} computer : ${computer}`)
@@ -75,7 +102,7 @@ document.querySelectorAll('button').forEach(button => {
             container.innerHTML += `You win with score: ${player} : ${computer} <br>`;
             container.innerHTML += 'Game Over';
 
-            header.innerHTML = `You lose with score: ${player} : ${computer}`
+            header.innerHTML = `You win with score: ${player} : ${computer}`
             container.append(header);
             
             console.log(`You win with score: ${player} : ${computer}`);

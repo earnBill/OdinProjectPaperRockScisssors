@@ -4,11 +4,36 @@
         <title>Paper Rock Scissors</title>
         <meta charset="utf-8">
         <script src="code.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <button class="btns" id="rockBtn" data-attr="rock">Rock</button>
-        <button class="btns" id="paperBtn" data-attr="paper">Paper</button>
-        <button class="btns" id="scissorsBtn" data-attr="scissors">Scissors</button>
+        <h1>Paper rock Scissors Game</h1>
+        <div class="mainContainer">
+          <div class="playerScreen">
+            <h2>Player:</h2>
+            <h2 class="playerScore">0</h2>
+            <div class="screen">
+                <div class="eleCont">
+                  <img src="" alt="">
+                  <div>
+                    <button class="btns" id="rockBtn" data-attr="rock">Rock</button>
+                    <button class="btns" id="paperBtn" data-attr="paper">Paper</button>
+                    <button class="btns" id="scissorsBtn" data-attr="scissors">Scissors</button>
+                  </div>
+                </div>    
+            </div>  
+          </div>
+          <div class="enemyScreen">
+            <h2>Enemy:</h2>
+            <h2 class="enemyScore">0</h2>
+            <div class="screen">
+                <div class="eleCont">
+                  <img src="" alt="">
+                </div>
+            </div>
+          </div>
+        </div>
+        
         <div class="container"></div>
     </body>
 </html>
