@@ -49,6 +49,7 @@ img {
 }
 
 .playAgain {
+    display: none;
     margin: auto;
     padding: 20px;
     font-size: 20px;
