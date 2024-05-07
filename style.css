@@ -1,35 +1,62 @@
-.mainContainer {
-    margin: auto;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    
 }
 
+.mainContainer {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+        
+}
+.gameBoard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+}
 h1 {
     text-align: center;
+    padding: 20px;
+    margin-bottom: 10px;
+    background-color: gray;
+    color: white;
 }
 
 .logs {
-    margin: auto;
-    width: 50%;
     margin-top: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
-.Screen {
+.screen {
     min-height: 100px;
     display: flex;
     flex-direction: column;
+    
 }
 
 .mainContainer {
-    width: 50%;
+    
+    width: 500px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
+
 h2 {
     text-align: center;
 }
 
 .playerScreen .screen {
     display: flex;
-    
+    flex-direction: column;
+    justify-content: center;
 }
 
 .enemyScreen .screen {
@@ -50,12 +77,19 @@ img {
 
 .playAgain {
     display: none;
-    margin: auto;
     padding: 20px;
     font-size: 20px;
+    margin: 10px;
 }
 
+.btns {
+    padding: 10px;
+}
 
-
-
-
+.endBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    width: 500px;
+}

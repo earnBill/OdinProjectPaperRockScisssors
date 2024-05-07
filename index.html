@@ -9,31 +9,37 @@
     <body>
         <h1>Paper Rock Scissors Game</h1>
         <div class="mainContainer">
-          <div class="playerScreen">
-            <h2>Player:</h2>
-            <h2 class="playerScore">0</h2>
-            <div class="screen">
-                <div class="eleCont">
-                  <img src="" alt="">
-                  <div class="playBtns">
-                    <button class="btns" id="rockBtn" data-attr="rock">Rock</button>
-                    <button class="btns" id="paperBtn" data-attr="paper">Paper</button>
-                    <button class="btns" id="scissorsBtn" data-attr="scissors">Scissors</button>
+          <div class="gameBoard">
+            <div class="playerScreen">
+              <h2>Player:</h2>
+              <h2 class="playerScore">0</h2>
+              <div class="screen">
+                  <div class="eleCont">
+                    <img src="" alt="">
+                    <div class="playBtns">
+                      <button class="btns" id="rockBtn" data-attr="rock">Rock</button>
+                      <button class="btns" id="paperBtn" data-attr="paper">Paper</button>
+                      <button class="btns" id="scissorsBtn" data-attr="scissors">Scissors</button>
+                    </div>
+                  </div>    
+              </div>  
+            </div>
+            <h2>Vs</h2>
+            <div class="enemyScreen">
+              <h2>Computer:</h2>
+              <h2 class="enemyScore">0</h2>
+              <div class="screen">
+                  <div class="eleCont">
+                    <img src="" alt="">
                   </div>
-                </div>    
-            </div>  
-          </div>
-          <div class="enemyScreen">
-            <h2>Enemy:</h2>
-            <h2 class="enemyScore">0</h2>
-            <div class="screen">
-                <div class="eleCont">
-                  <img src="" alt="">
-                </div>
+              </div>
             </div>
           </div>
+          <div class="endBoard">
+            <div class="logs"></div>
+            <button class="playAgain">Play Again</button>
+          </div>
         </div>
-        <div class="logs"></div>
-        <button class="playAgain">Play Again</button>
+        
     </body>
 </html>

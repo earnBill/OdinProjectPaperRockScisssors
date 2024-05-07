@@ -91,7 +91,7 @@ document.querySelectorAll('.btns').forEach(button => {
             clear();
 
         if (playerChoice == computerChoice) {
-            logs.innerHTML += 'Repeat round! <br>'
+            logs.innerHTML += 'Tie! <br>';
             return
         }
         
@@ -100,24 +100,19 @@ document.querySelectorAll('.btns').forEach(button => {
         if (result == 'player') {
             player++;
             playerScore.textContent = player;
-            // logs.innerHTML += `Player wins! ${playerChoice} beats ${computerChoice} <br>`;
-            // logs.innerHTML += `player : ${player} computer : ${computer} <br>`;
+            logs.innerHTML += `Win!! <br>`;
             console.log(`player : ${player} computer : ${computer}`)
             
         }
         else {
             computer++;
             enemyScore.textContent = computer;
-            // logs.innerHTML += `You Lose! ${computerChoice} beats ${playerChoice} <br>`;
-            // logs.innerHTML += `player : ${player} computer : ${computer} <br>`;
+            logs.innerHTML += `Lose!! <br>`;
             console.log(`player : ${player} computer : ${computer}`)
             
         }
 
         if (player == 5  ) {
-            // logs.innerHTML += `You win with score: ${player} : ${computer} <br>`;
-            // logs.innerHTML += 'Game Over';
-
             header.textContent = `You win with score: ${player} : ${computer}`
             logs.append(header);
             
@@ -129,10 +124,7 @@ document.querySelectorAll('.btns').forEach(button => {
             
         }
 
-        else if (computer == 5 ) {
-            // logs.innerHTML += `You lose with score: ${player} : ${computer} <br>`;
-            // logs.innerHTML += "Game over!!!!";
-            
+        else if (computer == 5 ) {    
             header.innerHTML = `You lose with score: ${player} : ${computer}`
             logs.append(header);
             playBtns.style.display = 'none';
