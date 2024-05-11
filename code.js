@@ -51,7 +51,7 @@ let alertC = false;
 
 playAgain.addEventListener('click', () => {
     playAgain.style.display = 'none';
-    playBtns.style.display = 'block';
+    playBtns.style.display = 'flex';
     enemyImage.src = '';
     playerImage.src = '';
     playerScore.textContent = 0;
